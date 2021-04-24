@@ -1,10 +1,19 @@
 import cards from '../templates/card.hbs'
-console.log(cards);
+
 import cardInfo from '../menu.json';
-console.log(cardInfo);
-console.log(cards(cardInfo[0]));
+
 
 const menuEl = document.querySelector(".js-menu");
 
+const markup = cards(cardInfo);
 
-menuEl.innerHTML = cards(cardInfo[0])
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
+
+const bodyEl = document.querySelector('body');
+console.log(bodyEl);
+
+menuEl.insertAdjacentHTML('beforeend', markup);
+
