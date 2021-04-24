@@ -13,7 +13,24 @@ const Theme = {
 };
 
 const bodyEl = document.querySelector('body');
-console.log(bodyEl);
+// console.log(bodyEl);
+const checkBoxEl = document.getElementById('theme-switch-toggle');
+// console.dir(checkBoxEl);
+
+checkBoxEl.addEventListener('change', checkBoxValue);
+
+function checkBoxValue(e) {
+    console.dir(checkBoxEl.checked);
+    return checkBoxEl.checked ? addDarkTheme() : addLightTheme();
+}
 
 menuEl.insertAdjacentHTML('beforeend', markup);
 
+function addLightTheme() {
+    bodyEl.classList.remove(Theme.DARK);
+    bodyEl.classList.add(Theme.LIGHT);
+ }
+function addDarkTheme() {
+      bodyEl.classList.remove(Theme.LIGHT);
+    bodyEl.classList.add(Theme.DARK);
+}
