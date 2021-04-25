@@ -40,12 +40,9 @@ function checkValueLS() {
     if (checkLocalSt !== null) {
         if (checkLocalSt === Theme.DARK) {
             checkBoxEl.checked = true;
-            console.log("1", checkBoxEl.checked)
             checkBoxEl.removeAttribute('checked');
             addDarkTheme();
         } else {
-            console.log("2")
-
             addLightTheme();
         }
     }
