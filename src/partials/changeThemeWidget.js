@@ -20,20 +20,16 @@ function checkBox(e) {
 }
 
  function addLightTheme() {
-    bodyEl.classList.remove(Theme.DARK);
-    bodyEl.classList.add(Theme.LIGHT);
+    changeClass(Theme.DARK, Theme.LIGHT);
     localStorage.setItem('Theme', Theme.LIGHT);
      checkBoxEl.removeAttribute('checked');
      currentValueTheme = localStorage.getItem('Theme')
 };
   
   function addDarkTheme() {
-    bodyEl.classList.remove(Theme.LIGHT);
-    bodyEl.classList.add(Theme.DARK);
+      changeClass(Theme.LIGHT, Theme.DARK);
       localStorage.setItem('Theme', Theme.DARK);
       currentValueTheme = localStorage.getItem('Theme')
-    console.log(currentValueTheme);
-
 };
 
 function checkValueLS() {
@@ -47,3 +43,10 @@ function checkValueLS() {
         }
     }
 }
+
+function changeClass(removeCl, addCl) {
+    bodyEl.classList.remove(removeCl);
+    bodyEl.classList.add(addCl);
+}
+
+
